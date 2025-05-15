@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="hero">
+    <section className={`hero ${games.length > 0 ? 'with-results' : ''}`}>
       <div className="hero-content">
         <h1>Discover Your Next Gaming Adventure</h1>
         <p>Explore thousands of games across all platforms and genres</p>

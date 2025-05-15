@@ -9,15 +9,24 @@
     position: relative;
     overflow: hidden;
     background: linear-gradient(135deg, var(--bg-dark), var(--secondary-color));
-    padding-top: 120px;
+    padding-top: 100px;
     transition: min-height 0.3s ease;
 
     // When results are showing, make hero section shorter
     &.with-results {
         min-height: 40vh;
         justify-content: flex-start;
-        padding-top: 6rem;
+        padding-top: 160px;
         padding-bottom: 2rem;
+
+        h1 {
+            font-size: 2.2rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
     }
 
     &::before {
@@ -47,22 +56,11 @@
         background-clip: text;
         color: transparent;
         line-height: 1.2;
-
-        // Make title smaller when results are showing
-        .with-results & {
-            font-size: 2.2rem;
-        }
     }
 
     p {
         font-size: 1.5rem;
         margin-bottom: 2.5rem;
-
-        // Make paragraph smaller when results are showing
-        .with-results & {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-        }
     }
 
     // Responsive styles
