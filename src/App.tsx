@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import BackToTop from './components/BackToTop';
 
 const App: React.FC = () => {
   return (
@@ -9,8 +9,8 @@ const App: React.FC = () => {
       <Header />
       <main>
         <Hero />
-        {/* More sections can be added below as needed */}
       </main>
+      <BackToTop />
     </div>
   );
 };

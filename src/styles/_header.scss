@@ -1,0 +1,100 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgba(16, 0, 43, 0.9);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+
+    // Add the scrolled class styles
+    &.scrolled {
+        padding: 0.8rem 2rem;
+        background-color: rgba(16, 0, 43, 0.98);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--primary-light);
+        margin: 0;
+        transition: font-size 0.3s ease;
+    }
+
+    // Make the header title smaller when scrolled
+    &.scrolled h1 {
+        font-size: 2rem;
+    }
+
+    nav {
+        display: flex;
+        gap: 2rem;
+
+        a {
+            font-size: 1.1rem;
+            position: relative;
+            color: var(--text-light);
+            transition: color 0.3s ease;
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 2px;
+                bottom: -5px;
+                left: 0;
+                background-color: var(--accent);
+                transition: width 0.3s ease;
+            }
+
+            &:hover::after {
+                width: 100%;
+            }
+
+            &:hover {
+                color: var(--accent);
+            }
+
+            // Active link styling
+            &.active {
+                color: var(--accent);
+
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    // Responsive styles
+    @media (max-width: 768px) {
+        padding: 1rem;
+
+        &.scrolled {
+            padding: 0.6rem 1rem;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+        }
+
+        &.scrolled h1 {
+            font-size: 1.5rem;
+        }
+
+        nav {
+            gap: 1rem;
+
+            a {
+                font-size: 0.9rem;
+            }
+        }
+    }
+}

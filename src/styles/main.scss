@@ -1,0 +1,8 @@
+/* Use forward and use instead of import */
+@forward 'variables';
+@use 'base';
+@use 'header';
+@use 'hero';
+@use 'search';
+@use 'games';
+@use 'buttons';

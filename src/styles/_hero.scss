@@ -1,0 +1,79 @@
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 2rem;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--bg-dark), var(--secondary-color));
+    padding-top: 120px;
+    transition: min-height 0.3s ease;
+
+    // When results are showing, make hero section shorter
+    &.with-results {
+        min-height: 40vh;
+        justify-content: flex-start;
+        padding-top: 6rem;
+        padding-bottom: 2rem;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.15;
+        z-index: -1;
+    }
+
+    &-content {
+        max-width: 800px;
+        margin-bottom: 2rem;
+    }
+
+    h1 {
+        font-size: 4rem;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(to right, var(--primary-light), var(--accent));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        line-height: 1.2;
+
+        // Make title smaller when results are showing
+        .with-results & {
+            font-size: 2.2rem;
+        }
+    }
+
+    p {
+        font-size: 1.5rem;
+        margin-bottom: 2.5rem;
+
+        // Make paragraph smaller when results are showing
+        .with-results & {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    // Responsive styles
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 2.2rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+    }
+}
