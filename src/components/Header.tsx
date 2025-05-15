@@ -1,16 +1,18 @@
 import React from 'react';
 
-const Header = () => (
-  <header>
-    <h1>Your Name</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-);
+const Header: React.FC = () => {
+  return (
+    <header>
+      <h1>Skirrow Raptor</h1>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#browse">Browse</a>
+        <a href="#popular">Popular</a>
+        <a href="#new">New Releases</a>
+        <a href="#about">About</a>
+      </nav>
+    </header>
+  );
+};
 
 export default Header;
